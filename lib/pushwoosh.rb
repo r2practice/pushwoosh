@@ -3,7 +3,7 @@ require 'pushwoosh/push_notification'
 require 'pushwoosh/configurable'
 require 'httparty'
 require 'pushwoosh/helpers'
-require 'pushwoosh/device_registration'
+require 'pushwoosh/device_registrations'
 
 module Pushwoosh
   extend Pushwoosh::Configurable
