@@ -18,5 +18,16 @@ module Pushwoosh
       PushNotification.new(options).notify_devices(message, devices, notification_options)
     end
 
+    def delete_message(message)
+      PushNotification.new({auth: Pushwoosh.auth}).delete_message(message)
+    end
+
+    def register(data = {})
+      DeviceRegistration.new(options).register(data)
+    end
+
+    def unregister(hwid = nil)
+      DeviceRegistration.new(options).unregister(hwid)
+    end
   end
 end
