@@ -22,6 +22,11 @@ module Pushwoosh
       create_message(other_options)
     end
 
+    def delete_message(message)
+      fail Pushwoosh::Exceptions::Error, 'MessageID is missing' if message.blank?
+      Request.make_post!('/deleteMessage', {message: message}.merge(auth_hash))
+    end
+
     private
 
     attr_reader :auth_hash
