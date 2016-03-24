@@ -29,7 +29,6 @@ module Pushwoosh
     end
 
     def make_post!
-      p build_request
       response = self.class.post(url, body: build_request.to_json).parsed_response
       Response.new(response)
     end
